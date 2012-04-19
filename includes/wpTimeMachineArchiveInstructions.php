@@ -1,0 +1,84 @@
+<?php
+
+// generate instructions text file
+
+$wpTM_it  = "";
+$wpTM_it .=      "__________________________________________________________________________________";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."    wpTimeMachine, version: ".wpTimeMachineVersion."                              ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."__________________________________________________________________________________";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."    These steps are recommendations, if you have a better way to                  ";
+$wpTM_it .= "\n"."    handle restoration, consider sharing that in the forums, here:                ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."    http://wordpress.org/tags/wp-time-machine?forum_id=10                         ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."    If you get stuck that's also a good place to search for help                  ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."__________________________________________________________________________________";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."    Step 1)                                                                       ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."        Get your old version of WordPress in place:                               ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."        ".wp_installer_url.$format."                                              ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."        Uncompress that file after downloading it & then upload                   ";
+$wpTM_it .= "\n"."        it to the 'old' location where you had WordPress before.                  ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."        Just like when you first set up WordPress, you will need                  ";
+$wpTM_it .= "\n"."        to make a copy of wp-config-sample.php called wp-config.php               ";
+$wpTM_it .= "\n"."        and update that file with your database information.  Unless              ";
+$wpTM_it .= "\n"."        you manually backed this up -- which would've been a good                 ";
+$wpTM_it .= "\n"."        idea.                                                                     ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."    Step 2)                                                                       ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."        If you had a .htaccess file in use, copy wpTimeMachine-htaccess.txt to:   ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."        http://yourdomain.com/.htaccess                                           ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."    Step 3)                                                                       ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."        Rename the WordPress folder called wp-content to something                ";
+$wpTM_it .= "\n"."        like wp-content-blank-slate.                                              ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."        Uncompress wpTimeMachine-content-files".$format." & double check          ";
+$wpTM_it .= "\n"."        the directory structure, which should look like:                          ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."        wp-content/                                                               ";
+$wpTM_it .= "\n"."                    plugins/                                                      ";
+$wpTM_it .= "\n"."                    themes/                                                       ";
+$wpTM_it .= "\n"."                    uploads/                                                      ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."        (There may be other files in there, too.)                                 ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."        Upload wp-content into your WordPress folder from Step 1 ...              ";
+$wpTM_it .= "\n"."        wp-content should be at the same directory level as                       ";
+$wpTM_it .= "\n"."        wp-content-blank-slate                                                    ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."    Step 4)                                                                       ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."        Uncompress wpTimeMachine-data-files.sql.gz ...                            ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."        This will create a .sql file which can be used to restore all             ";
+$wpTM_it .= "\n"."        of your data.                                                             ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."        Use the same method you originally used to set up your database           ";
+$wpTM_it .= "\n"."        to get your back up in place.  This most likely involved using            ";
+$wpTM_it .= "\n"."        your hosting providers instance of phpMyAdmin.                            ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."__________________________________________________________________________________";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."    That's it ... start testing ...                                               ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."    wpTimeMachine, version: ".wpTimeMachineVersion."                              ";
+$wpTM_it .= "\n"."                                                                                  ";
+$wpTM_it .= "\n"."__________________________________________________________________________________";
+
+$instructions_txt = $wpTM_it;
+
+?>

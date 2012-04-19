@@ -1,0 +1,79 @@
+<?php
+
+// restoration shell script
+
+$wpTM_rss  = "";
+$wpTM_rss .=      "##                                                                                                      ";
+$wpTM_rss .= "\n"."## PLEASE CONSULT THIS ARTICLE BEFORE USING THIS SCRIPT:                                                ";
+$wpTM_rss .= "\n"."## http://wptimemachine.com/-/restoration-shell-script/                                                 ";
+$wpTM_rss .= "\n"."##                                                                                                      ";
+$wpTM_rss .= "\n"."## STEP 1) Upload this & the other archive files to your doc root                                       ";
+$wpTM_rss .= "\n"."##                                                                                                      ";
+$wpTM_rss .= "\n"."##         For example:                                                                                 ";
+$wpTM_rss .= "\n"."##         ".wpcontent_archive.$format.",                                                               ";
+$wpTM_rss .= "\n"."##         ".wpdata_sql.",                                                                              ";
+$wpTM_rss .= "\n"."##         ".htaccess_archive.",                                                                        ";
+$wpTM_rss .= "\n"."##         ".restoration." (This File), &                                                               ";
+$wpTM_rss .= "\n"."##         ".instructions." should all be in here:                                                      ";
+$wpTM_rss .= "\n"."##         " . $_SERVER['DOCUMENT_ROOT'] . "                                                            ";
+$wpTM_rss .= "\n"."##                                                                                                      ";
+$wpTM_rss .= "\n"."## STEP 2) Make ".restoration." executable:                                                             ";
+$wpTM_rss .= "\n"."##                                                                                                      ";
+$wpTM_rss .= "\n"."##         chmod 777 ".restoration."                                                                    ";
+$wpTM_rss .= "\n"."##                                                                                                      ";
+$wpTM_rss .= "\n"."## STEP 3) Run ".restoration.":                                                                         ";
+$wpTM_rss .= "\n"."##                                                                                                      ";
+$wpTM_rss .= "\n"."##         ./".restoration."                                                                            ";
+$wpTM_rss .= "\n"."##                                                                                                      ";
+$wpTM_rss .= "\n"."## STEP 4) Deletion (aka Clean Up):                                                                     ";
+$wpTM_rss .= "\n"."##                                                                                                      ";
+$wpTM_rss .= "\n"."##         Remove the following files!!                                                                 ";
+$wpTM_rss .= "\n"."##         ".wpcontent_archive.$format.",                                                               ";
+$wpTM_rss .= "\n"."##         ".wpdata_sql.",                                                                              ";
+$wpTM_rss .= "\n"."##         ".htaccess_archive.",                                                                        ";
+$wpTM_rss .= "\n"."##         ".restoration." (This File), &                                                               ";
+$wpTM_rss .= "\n"."##         ".instructions."                                                                             ";
+$wpTM_rss .= "\n"."##                                                                                                      ";
+$wpTM_rss .= "\n"."##         This step will get reduced to either running a script                                        ";
+$wpTM_rss .= "\n"."##         or command & for now, some of the files may get cleaned                                      ";
+$wpTM_rss .= "\n"."##         up automatically; so don't worry if you don't see one of                                     ";
+$wpTM_rss .= "\n"."##         the files listed in this step.  The important thing is                                       ";
+$wpTM_rss .= "\n"."##         these files get removed ...                                                                  ";
+$wpTM_rss .= "\n"."##                                                                                                      ";
+$wpTM_rss .= "\n"."                                                                                                        ";
+$wpTM_rss .= "\n"."echo \"Wordpress download\"                                                                             ";
+$wpTM_rss .= "\n"."                                                                                                        ";
+$wpTM_rss .= "\n"."wget ".wp_installer_url.$format."                                                                       ";
+$wpTM_rss .= "\n"."tar -xzf wordpress-".wp_version.$format."                                                               ";
+$wpTM_rss .= "\n"."rm wordpress-".wp_version.$format."                                                                     ";
+$wpTM_rss .= "\n"."                                                                                                        ";
+$wpTM_rss .= "\n"."echo \"wp-content extract\"                                                                             ";
+$wpTM_rss .= "\n"."                                                                                                        ";
+$wpTM_rss .= "\n"."tar -xzf wpTimeMachine-content-files".$format."                                                         ";
+$wpTM_rss .= "\n"."                                                                                                        ";
+$wpTM_rss .= "\n"."echo \"remove default installed wp-content\"                                                            ";
+$wpTM_rss .= "\n"."                                                                                                        ";
+$wpTM_rss .= "\n"."rm -rf ." . wp_install_dir . "/wp-content                                                               ";
+$wpTM_rss .= "\n"."                                                                                                        ";
+$wpTM_rss .= "\n"."echo \"move existing wp-content archive into place & chmod to 755\"                                     ";
+$wpTM_rss .= "\n"."                                                                                                        ";
+$wpTM_rss .= "\n"."mv ." . $_SERVER['DOCUMENT_ROOT'] . wp_install_dir . "/wp-content/ ." . wp_install_dir . "/wp-content/  ";
+$wpTM_rss .= "\n"."                                                                                                        ";
+$wpTM_rss .= "\n"."chmod 755 ." . wp_install_dir . "/wp-content                                                            ";
+$wpTM_rss .= "\n"."                                                                                                        ";
+$wpTM_rss .= "\n"."echo \"move htaccess & chmod to 755\"                                                                   ";
+$wpTM_rss .= "\n"."                                                                                                        ";
+$wpTM_rss .= "\n"."mv wpTimeMachine-htaccess.txt ".$_SERVER['DOCUMENT_ROOT']."/.htaccess                                   ";
+$wpTM_rss .= "\n"."chmod 755 ".$_SERVER['DOCUMENT_ROOT']."/.htaccess                                                       ";
+$wpTM_rss .= "\n"."                                                                                                        ";
+$wpTM_rss .= "\n"."echo \"remove extracted wp-content\"                                                                    ";
+$wpTM_rss .= "\n"."                                                                                                        ";
+$wpTM_rss .= "\n"."cat <<EOF | mysql -u " . DB_USER . " -p" . DB_PASSWORD . "                                              ";
+$wpTM_rss .= "\n"."drop " . DB_NAME . ";                                                                                   ";
+$wpTM_rss .= "\n"."create " . DB_NAME . ";                                                                                 ";
+$wpTM_rss .= "\n"."source " . wpdata_sql . ";                                                                              ";
+$wpTM_rss .= "\n"."EOF                                                                                                     ";
+
+$restoration_shell_script = $wpTM_rss;
+
+?>

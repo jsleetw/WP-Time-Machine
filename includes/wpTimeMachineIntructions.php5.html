@@ -1,0 +1,76 @@
+<p> 
+   
+    This plugin is pretty simple. You can use Dropbox, Amazon's S3, or an FTP account to store WordPress. Need an account? 
+    Visit: <a href="https://www.dropbox.com/referrals/NTE0ODYwNjc5" target="_new">Dropbox</a>. Or, for Amazon's S3 visit: 
+    <a href="https://s3.amazonaws.com/" target="_new">https://s3.amazonaws.com</a>.  If you decide to use an FTP account, 
+    it makes a lot of sense to use a remote FTP account on a server that isn't shared with this WordPress installation.
+                  
+</p>  
+  
+<p>    
+    
+    The files that get generated for each archive are:
+                         
+    <ol>
+        <li>wpTimeMachine-content-files<?php echo $format; ?></li>
+        <li>wpTimeMachine-data-files.sql</li>
+        <li>wpTimeMachine-htaccess.txt <sup>1</sup></li>
+        <li>wpTimeMachine-Instructions.txt <sup>2</sup></li>
+        <li>wpTimeMachine-RestorationScript.sh <sup>3</sup></li>
+    </ol> 
+                           
+    <em>
+    1: if you're not using .htaccess then no, it won't be created <br />
+    2: if you're ever recovering from a catastrophic WordPress failure, this file will help<br />
+    3: this file is still under development &amp; should be used with caution<br />
+    </em>  
+                          
+    <div class="hint">
+    It's a good idea to store the following two items on your own, (in the same place as the files above):<br/>
+    Your copy of WordPress: <a href="<?php echo wp_installer_url.$format;?>"><?php echo wp_installer_url.$format;?></a><br/>
+    Or, read about how to use <a href="http://wptimemachine.com/-/wordpress-and-subversion/">Subversion for your WordPress implementation</a>.<br/>
+    Your copy of wp-config.php <em>For security purposes this file is not backed up!</em>
+    </div>  
+      
+</p> 
+
+<p>
+
+    <b>Information about Scheduling (and cron):</b>
+    <br />
+
+    <ol>
+        <li><?php echo wpcontent_url . "/plugins/wp-time-machine/cron.php"; ?></li>
+        <li><?php echo wpcontent_dir . "/plugins/wp-time-machine/cron.php"; ?></li>
+    </ol> 
+         
+    For example, you might use curl:<br />
+                  
+    <code>
+    curl "<?php echo wpcontent_url . "/plugins/wp-time-machine/cron.php"; ?>?generate=1"
+    </code>
+    
+       
+    <div class="hint">
+    
+    Note that it is recommended that you set up a separate cron job to delete the temporary archive files:
+            
+    <code>
+    curl "<?php echo wpcontent_url . "/plugins/wp-time-machine/cron.php"; ?>?clean=1"
+    </code>
+    
+    </div>
+    
+    There are many ways to use the scripts referenced above ... this is just an example, for more information read this:<br />
+    <a href="http://wptimemachine.com/-/scheduling-wp-time-machine-via-cron/" target="_new">http://wptimemachine.com/-/scheduling-wp-time-machine-via-cron/</a>
+    
+</p>
+
+<p>
+
+    Having trouble? Visit the <a href="http://wordpress.org/tags/wp-time-machine?forum_id=10" target="_blank">WordPress forum</a>, and please share 
+    this URL: <a href="<?php echo wpcontent_url . "/wpTimeMachine_log.txt"; ?>" target="_new"><?php echo wpcontent_url . "/wpTimeMachine_log.txt"; ?></a> 
+    (the log -- if enabled -- contains vital information for trouble shooting).<br />
+
+</p>
+                    
