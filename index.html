@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Wp-time-machine by petty</title>
+    
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Wp-time-machine</h1>
+        <p>Back up your Wordpress to Dropbox, S3 or a remote FTP server</p>
+        <p class="view"><a href="https://github.com/petty/WP-Time-Machine">View the Project on GitHub <small>petty/WP-Time-Machine</small></a></p>
+        <ul>
+          <li><a href="https://github.com/petty/WP-Time-Machine/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/petty/WP-Time-Machine/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/petty/WP-Time-Machine">Fork On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>wp Time Machine</h1>
+
+<p>Tags: plugins archive archives backup backups remote offsite
+Contributors: Paul G Petty
+Requires at least: 2.9.2
+Tested up to: 3.2
+Stable tag: 1.9.21
+Donate link: <a href="http://wptimemachine.com/show-your-support/">http://wptimemachine.com/show-your-support/</a></p>
+
+<h2>Description</h2>
+
+<p>Create archives of all your WordPress data &amp; files and have them stored remotely. That's right! Remote storage of...</p>
+
+<ol>
+<li>Your data (from your WordPress MySQL database)</li>
+<li>Your files (and Uploads) -- everything in wp-content</li>
+<li>Your .htaccess file</li>
+<li>Instructions for a smooth recovery </li>
+<li>A shell script that can help automate recovery -- though this is still a "work in progress"</li>
+</ol><p>You provide the remote account; this plugin provides a connection to the offsite facility you choose. Choose from...</p>
+
+<ol>
+<li>You can use Dropbox (if you don't have a dropbox use this referral link): <a href="https://www.dropbox.com/referrals/NTE0ODYwNjc5">https://www.dropbox.com/referrals/NTE0ODYwNjc5</a> </li>
+<li>Also, archives can be 'sent' to Amazon's AWS S3: <a href="https://s3.amazonaws.com">https://s3.amazonaws.com</a></li>
+<li>And, FTP is now supported as well (just provide an <em>offsite</em> host, username &amp; password, and optionally a remote directory on that host)</li>
+</ol><p>Some recent improvements include:</p>
+
+<ol>
+<li>A new option to exclude cache directories</li>
+<li>Automatic exclusion of MySQL tables that don't start with your table prefix</li>
+</ol><p>Check out <a href="http://wptimemachine.com">http://wptimemachine.com</a> for more information.</p>
+
+<p><strong>This Plugin requires PHP5 for all of its features!</strong></p>
+
+<p>With PHP4, the only offsite service capable of working at this time is FTP.</p>
+
+<h2>Installation</h2>
+
+<p><strong>This Plugin requires PHP5 for all of its features!</strong></p>
+
+<p>With PHP4, the only offsite service capable of working at this time is FTP.</p>
+
+<p>The easiest way to install:</p>
+
+<ol>
+<li>Under the 'Plugins' menu in WordPress select 'Add New'</li>
+<li>Enter 'wp Time Machine' into the search box</li>
+<li>Choose the 'install' option</li>
+</ol><p>The Subversion way:</p>
+
+<ol>
+<li>Navigate to wp-content/plugins/</li>
+<li>svn co <a href="http://plugins.svn.wordpress.org/wp-time-machine/trunk/">http://plugins.svn.wordpress.org/wp-time-machine/trunk/</a> ./wp-time-machine</li>
+</ol><p>And, the old way:</p>
+
+<ol>
+<li>Download the plugin archive and expand it</li>
+<li>Put the unzipped files in your wp-content/plugins/ directory.</li>
+<li>Click "wp Time Machine" in the Settings Menu</li>
+</ol><h2>Frequently Asked Questions ##</h2>
+
+<p>Here are the best places to get help...</p>
+
+<p><a href="http://wordpress.org/tags/wp-time-machine?forum_id=10">http://wordpress.org/tags/wp-time-machine?forum_id=10</a> [The WordPress forum]</p>
+
+<p><a href="http://wptimemachine.com">http://wptimemachine.com</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/petty">petty</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
