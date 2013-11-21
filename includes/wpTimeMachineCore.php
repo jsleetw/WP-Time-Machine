@@ -1,6 +1,6 @@
 <?php
 
-if ($_GET['clear_log'] == "true") {
+if (isset($_GET['clear_log']) && $_GET['clear_log'] == "true") {
 	if (file_exists( wpTimeMachineLog )) {
 		$log_message = "[".date("Y-m-d g:i:s a")."] *** log cleared ***";
 		$log_handle = fopen(wpTimeMachineLog, 'w');
